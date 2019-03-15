@@ -2,6 +2,7 @@ body {
     background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
 }
 
+.alert-danger-alt { border-color: #B63E5A;background: #E26868;color: #fff; }
 h1 {
     margin: 1em 0
 }
