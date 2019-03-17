@@ -10,8 +10,8 @@
                     <form class="form" method="POST" novalidate>
                         {{ form.hidden_tag() }}
                         <div class="form-label-group">
-                            <input type="email" class="form-control" name="email" id="email" aria-describedby="email"
-                                placeholder="Email" required autofocus>
+                            <input type="text" class="form-control" name="username" id="email" aria-describedby="username"
+                                placeholder="Username" required autofocus>
                             {% for error in form.username.errors %}
                             <div class="alert alert-danger mt-2">
                                 [{{ error }}]

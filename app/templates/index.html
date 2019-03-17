@@ -1,29 +1,10 @@
-{% extends "layout.html" %}
+{% extends "base.html" %}
 
-{% block title %}Home{% endblock %}
-
-{% block body %}
-<h1 class="text-center">Simple Flask App Registration User</h1>
-<div class="container">
-    <div class="row">
-        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-            <div class="card card-signin my-5">
-                <div class="card-body">
-                    <h2 class="card-title text-center">Sign In</h2>
-                    <div class="form">
-                        <div class="form-label-group">
-                            <input type="email" class="form-control" name="email" id="email" aria-describedby="email"
-                                placeholder="Email" required autofocus>
-                        </div>
-                        <div class="form-label-group mt-4">
-                            <input type="password" class="form-control" name="password" id="password" aria-describedby="password"
-                                placeholder="password" required autofocus>
-                        </div>
-                        <button class="btn btn-primary btn-block text-uppercase mt-4" type="submit">Sign in</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+{% block content %}
+<h1>Hi, {{ current_user.username }}</h1>
+{% for post in posts %}
+<div>
+    <p>{{ post.author.username }} says: <b>{{ post.body }}</b></p>
 </div>
+{% endfor %}
 {% endblock %}
