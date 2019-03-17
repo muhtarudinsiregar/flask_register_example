@@ -1,16 +1,60 @@
-{% extends "layout.html" %}
+{% extends "base.html" %}
 
-{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h2 class="card-title text-center">Sign Up</h2>
+                    <form class="form" method="POST" novalidate>
+                        {{ form.hidden_tag() }}
+                        <div class="form-label-group">
+                            <input type="text" class="form-control" name="username" id="email" aria-describedby="username"
+                                placeholder="Username" required autofocus>
+                            {% for error in form.username.errors %}
+                            <div class="alert alert-danger mt-2">
+                                [{{ error }}]
+                            </div>
+                            {% endfor %}
+                        </div>
 
-{% block body %}
-<h1 class="text-center">Dashboard</h1>
-<div class="row">
-    <div class="col-sm-8 offset-sm-2">
-        <p>Welcome to the dashboard, {{ g.user.profile.firstName }}!</p>
-        <p>Your user information has been pulled from the <code>g.user</code>
-            object, which makes accessing your user information simple. Your first
-            name, for example, is available via the <code>g.user.profile.firstName</code>
-            property. Your user id (<code>{{ g.user.id }}</code>), is pulled from the <code>g.user.id</code> property!</p>
+                        <div class="form-label-group mt-4">
+                            <input type="email" class="form-control" name="email" id="email" aria-describedby="email"
+                                placeholder="Email" required autofocus>
+                            {% for error in form.email.errors %}
+                            <div class="alert alert-danger mt-2">
+                                [{{ error }}]
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="form-label-group mt-4">
+                            <input type="password" class="form-control" name="password" id="password" aria-describedby="password"
+                                placeholder="Password" required autofocus>
+
+                            {% for error in form.password.errors %}
+                            <div class="alert alert-danger mt-2">
+                                [{{ error }}]
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                        <div class="form-label-group mt-4">
+                            <input type="password" class="form-control" name="password_confirm" id="password_confirm"
+                                aria-describedby="password" placeholder="Password Confirm" required autofocus>
+
+                            {% for error in form.password_confirm.errors %}
+                            <div class="alert alert-danger mt-2">
+                                [{{ error }}]
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                        {{ form.submit(class="btn btn-primary btn-block text-uppercase mt-4") }}
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}

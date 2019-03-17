@@ -1,7 +1,7 @@
 from flask import flash, redirect, render_template, url_for
 from flask_login import current_user, login_required, login_user, logout_user
 
-from app import app
+from app import app, db
 from app.forms import LoginForm, RegisterForm
 from app.models import User
 
@@ -43,7 +43,7 @@ def register():
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
-
+        flash("Success register, please sign in")
         return redirect(url_for('login'))
 
     return render_template("register.html", title="Sign Up", form=form)
