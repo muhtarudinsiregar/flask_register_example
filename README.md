@@ -13,7 +13,10 @@ A simple flask project with register and login features.
 - Then, run command `flask run`
 - Open up your browser and enter the following url address field:  `localhost:5000`
 
-
+### Dependencies
+- [flask-migrate](https://flask-migrate.readthedocs.io/en/latest/)
+- [flask-sqlalchemy](http://flask-sqlalchemy.pocoo.org/2.3/)
+- [flask-wtf](https://flask-wtf.readthedocs.io/en/stable/)
 
 
 ### Screenshoots
